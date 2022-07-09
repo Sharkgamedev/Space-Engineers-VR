@@ -1,5 +1,8 @@
 # Space Engineers VR MOD
 
+### NOTICE!
+This VR Mod is an early Wip. You probably shouldn't but *might* have some crashes (If you do I'd love it if you created an issue using the tabs above, attaching your log file!) but more importantly *things will be jank* and *not all features are in yet.* Things will improve with time however!
+
 ### What's this?
 This is a full vr mod for Space Engineers, it features:
 - Full 6 DOF

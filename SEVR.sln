@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30523.141
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SE VR", "SEVR\SEVR.csproj", "{1C139B03-19B0-4E7A-B5E3-F21ACD5573D5}"
+Project("{FFB2479F-DB83-4A4E-B7B2-0E067E421431}") = "SE VR", "SEVR\SEVR.csproj", "{579137FB-E362-4EB2-AF16-B3B2C9A18D7B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{1C139B03-19B0-4E7A-B5E3-F21ACD5573D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1C139B03-19B0-4E7A-B5E3-F21ACD5573D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1C139B03-19B0-4E7A-B5E3-F21ACD5573D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1C139B03-19B0-4E7A-B5E3-F21ACD5573D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{579137FB-E362-4EB2-AF16-B3B2C9A18D7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{579137FB-E362-4EB2-AF16-B3B2C9A18D7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{579137FB-E362-4EB2-AF16-B3B2C9A18D7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{579137FB-E362-4EB2-AF16-B3B2C9A18D7B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {11F4D121-4F92-473A-B11E-6B9E70D6FD18}
+		SolutionGuid = {1862C71A-0E28-4005-AD9E-69E894735286}
 	EndGlobalSection
 EndGlobal

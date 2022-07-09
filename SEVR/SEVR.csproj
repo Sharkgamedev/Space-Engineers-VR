@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{1C139B03-19B0-4E7A-B5E3-F21ACD5573D5}</ProjectGuid>
+    <ProjectGuid>{FFB2479F-DB83-4A4E-B7B2-0E067E421431}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>SEVR</RootNamespace>

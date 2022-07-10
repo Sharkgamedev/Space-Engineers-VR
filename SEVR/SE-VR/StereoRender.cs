@@ -13,7 +13,7 @@ namespace Sevr
         Right
     }
 
-    public class SevrStereo
+    public class StereoRender
     {
         [HarmonyPatch]
         public static class StereoRenderingPatch

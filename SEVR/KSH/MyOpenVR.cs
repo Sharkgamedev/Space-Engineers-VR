@@ -11,6 +11,7 @@ using Valve.VR;
 #endif // !XB1
 using VRageMath;
 using VRage.Utils;
+using System.Reflection;
 
 namespace VRage.OpenVRWrapper
 {
@@ -25,6 +26,17 @@ namespace VRage.OpenVRWrapper
             origin = matrix;
             assignedController = role;
         }
+    }
+
+    public struct Handles
+    {
+        public ulong ActionSet_Main;
+
+    }
+
+    public struct Actions
+    {
+        public VRActiveActionSet_t[] ActionSet_Main;
     }
 
     public class MyOpenVR
@@ -93,6 +105,7 @@ namespace VRage.OpenVRWrapper
         {
         }
 #else // !XB1
+        #region Props and Fields
         private static MyOpenVR m_openVR;
         public static MyOpenVR Static
         {
@@ -142,6 +155,8 @@ namespace VRage.OpenVRWrapper
         public static bool Debug2DImage = false;//print 2D image from single frame
         public static bool SyncWait = true;
 
+        public static CVRInput VRInput => m_vrInput;
+
         public static VRageRender.MyViewport Viewport => m_viewport;
         public static ulong FrameCount
         {
@@ -152,6 +167,7 @@ namespace VRage.OpenVRWrapper
 
         private static CVRCompositor m_vrCompositor;
         private static CVRSystem m_vrSystem;
+        private static CVRInput m_vrInput;
         private static TrackedDevicePose_t[] renderPose = new TrackedDevicePose_t[16];
         private static TrackedDevicePose_t[] gamePose = new TrackedDevicePose_t[16];
         private static Matrix m_viewHMD = Matrix.Identity;
@@ -185,6 +201,9 @@ namespace VRage.OpenVRWrapper
 
         public static bool IsActive { get { return m_vrSystem != null; } }
 
+        public static Handles ActionHandles;
+        public static Actions InputActions;
+        #endregion
         #region constructors and init
         static MyOpenVR()
         {
@@ -263,6 +282,7 @@ namespace VRage.OpenVRWrapper
                     throw new Exception(errString);
                 }
                 InitOverlays();
+               // InitSteamInput();
             }
         }
         #endregion
@@ -486,6 +506,24 @@ namespace VRage.OpenVRWrapper
             mat.M43 = pose.m11;
 
             mat.M44 = 1;
+        }
+        #endregion
+        #region Input
+        private static void InitSteamInput()
+        {
+            EVRInitError error = EVRInitError.None;
+            OpenVR.GetGenericInterface(OpenVR.IVRInput_Version, ref error);
+
+            Debug.Assert(error == EVRInitError.None);
+
+            m_vrInput = OpenVR.Input;
+            m_vrInput.SetActionManifestPath($"{Assembly.GetExecutingAssembly().Location}\\SteamVRActionManifest\\action_manifest.json");
+             
+            InputActions.ActionSet_Main = new VRActiveActionSet_t[1];
+
+            m_vrInput.GetActionSetHandle("/actions/main", ref ActionHandles.ActionSet_Main);
+            InputActions.ActionSet_Main[0].ulActionSet = ActionHandles.ActionSet_Main;
+            //OpenVR.Input.GetActionHandle()
         }
         #endregion
         #region menus

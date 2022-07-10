@@ -1,11 +1,6 @@
-﻿using HarmonyLib;
-using Sandbox.Game.Entities.Character;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Runtime.InteropServices;
+using Valve.VR;
+using VRage.OpenVRWrapper;
 
 namespace Sevr
 {
@@ -13,7 +8,9 @@ namespace Sevr
     {
         public static void Update()
         {
+            if (MyOpenVR.Static == null || MyOpenVR.VRInput == null) return;
 
+            MyOpenVR.VRInput.UpdateActionState(MyOpenVR.InputActions.ActionSet_Main, (uint)(Marshal.SizeOf(typeof(VRActiveActionSet_t))));
         }
     }
 }

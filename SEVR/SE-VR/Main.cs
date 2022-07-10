@@ -19,7 +19,7 @@ namespace Sevr.SE_VR
         public void Update()
         {
             // Update subsystems
-            Input.Update();
+            //Input.Update();
         }
 
         public void Loaded()

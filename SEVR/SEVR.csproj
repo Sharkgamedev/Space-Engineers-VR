@@ -144,8 +144,8 @@
     <Compile Include="KSH\MyOpenVR.cs" />
     <Compile Include="SE-VR\Input.cs" />
     <Compile Include="SE-VR\Main.cs" />
-    <Compile Include="SE-VR\SevrStereo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SE-VR\StereoRender.cs" />
     <Compile Include="Third Party\openvr_api.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

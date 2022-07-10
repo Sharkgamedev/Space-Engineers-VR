@@ -1,0 +1,50 @@
+{
+  "default_bindings": [
+   
+  ], 
+  "actions": [
+    {
+      "name": "/actions/main/in/Interact",
+      "requirement": "mandatory",
+      "type": "boolean"
+    },
+    {
+      "name": "/actions/main/out/vibration_left",
+      "type": "vibration"
+    },
+    {
+      "name": "/actions/main/out/vibration_right",
+      "type": "vibration"
+    },
+    {
+      "name": "/actions/main/in/Walk",
+      "requirement" : "suggested",
+      "type": "vector2"
+    },
+    {
+      "name": "/actions/main/in/Turn",
+      "type": "vector1"
+    },
+    {
+      "name": "/actions/main/in/Jump",
+      "type": "bool"
+    },
+    {
+      "name": "/actions/main/in/Crouch",
+      "type": "bool"
+    }
+  ],
+  "action_sets": [
+    {
+      "name": "/actions/main",
+      "usage": "leftright"
+    }
+  ],
+  "localization" : [
+   {
+       "language_tag": "en_us",
+
+        "/actions/main" : "Space Engineers Main VR Actions",
+    }
+  ]
+}
